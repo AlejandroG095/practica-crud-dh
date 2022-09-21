@@ -44,7 +44,9 @@ const controller = {
             id: data.length + 1,
             name: req.body.name,
             price: Number(req.body.price),
-            description: req.body.description
+            description: req.body.description,
+            //agregamos la propidead image para guardarla en el objeto nuevo con el atributo req.file que se usa en multer para obtener los atributos de la imagen que se subió al sistema
+            image: req.file.filename
         }
         // agregamos el nuevo producto a nuesto arreglo de productos:
         data.push(newProduct);
@@ -75,6 +77,25 @@ const controller = {
         platoEncontrado.price = req.body.price;
         platoEncontrado.description = req.body.description;
         //sobreescribimos el registro en nuestro archivo js pasando data
+        writeFile(data);
+        //redirigimos
+        res.redirect('/products/list');
+    }, 
+    delete: (req, res) => {
+        const data = findAll();
+        /* const platoEncontrado = data.findIndex(function(plato){
+            return plato.id == req.params.id;
+        });
+        data.splice(platoEncontrado, 1);
+        ...
+        */
+        data.splice(data.findIndex(function(plato){
+            return plato.id == req.params.id;
+        }), 1);
+        //borramos la imagen adjunta al objeto:
+        /*
+        fs.unlinkSync(path.join(__dirname,"../..public/img/imagenes-platos", product.image)); 
+        */
         writeFile(data);
         //redirigimos
         res.redirect('/products/list');

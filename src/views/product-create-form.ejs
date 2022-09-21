@@ -26,7 +26,8 @@
                 Creacion de producto:
             </h1>
             <div class="form-container">
-                <form action="/products/create"  method="POST">
+                <!--Agregamos el enctype="multipart/form-data para poder agregar imagenes con multer (solo cuando trabajamos con multer)"-->
+                <form action="/products/create" enctype="multipart/form-data" method="POST">
           
                     <div class="field-wrap">
                         <label for="name">Nombre de plato:</label>
@@ -42,6 +43,12 @@
                         <label for="description">Descripcion:</label>
                         <textarea name="description" id="description"></textarea>
                     </div>
+
+                    <!--Agregar imagenes a los productos-->
+                    <div class="field-wrap">
+                        <label for="image">Cargar imagen</label>
+                        <input type="file" name="image" id="image">
+                    </div>                  
                       
                     <div class="field-wrap">
                         <button type="submit">

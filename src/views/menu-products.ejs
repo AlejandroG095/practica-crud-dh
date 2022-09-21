@@ -32,7 +32,8 @@
         <% products.forEach(function(plato) { %>
           <article>
             <div class="img-container">
-              <img src="/img/principal.jpg" alt="plato">
+              <!--el || sirve para cargar una imagen por defecto en caso de que el producto no tenga una imagen-->
+              <img src="/img/imagenes-platos/<%= plato.image || 'principal.jpg'%>" alt="plato">
             </div>
             <p>informacion del plato:</p>
             <ul>

@@ -1,17 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Esparragos",
-        "description": "asdasd",
-        "price": "600"
-    },
-    {
-        "id": 2,
-        "name": "Risotto de milanesa",
-        "description": "Risotto con berenjena y queso de cabra",
-        "price": "800"
-    },
-    {
         "id": 3,
         "name": "Milanesa",
         "price": "500",
@@ -22,5 +10,12 @@
         "name": "beuf bourgignon",
         "price": 500,
         "description": "pernil de cordero asado en vino tinto con papas y ensalada"
+    },
+    {
+        "id": 3,
+        "name": "milanesa2",
+        "price": 15000,
+        "description": "asdsda",
+        "image": "image1663720020235-.jpg"
     }
 ]
